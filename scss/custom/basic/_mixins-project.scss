@@ -1,0 +1,19 @@
+// ---------------------------
+// mixins propios del proyecto
+// ===========================
+
+// Background | Before
+@mixin background-after($filename, $w: 100%, $h: 100%, $top: null, $right: null, $bottom: null, $left: null, $z-index: null, $size: null) {
+    $imagedir: '../assets/images/';
+
+    &::after {
+        content: '';
+        @include position(absolute, $top $right $bottom $left);
+        z-index: $z-index;
+        @include sizing($w, $h);
+        background-image: url(#{$imagedir}#{$filename});
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: $size;
+    }
+}

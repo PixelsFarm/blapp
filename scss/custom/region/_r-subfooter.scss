@@ -1,0 +1,46 @@
+// Regio sobre footer
+
+.r-subfooter {
+	background-color: $color-brand-blue;
+	@include padding(160px null 26px null);
+	position: relative;
+	@include background-before('logo-blapp.svg', $w: 131px, $h: 86px, $top: 46px, $size: contain);
+	@include center-x($before: true);
+	@include background-after('blapp_friends.png',$w: 340px, $h: 343px, $top: -77px, $left: 0); 
+	@include background('background.svg', $position:top center); 
+
+	@media #{$sm-and-up}{
+		@include padding(180px null 56px null);
+	}
+
+	@media #{$md-and-up}{
+		@include padding(240px null 126px null);
+	}
+
+	&:after{
+		display:none;
+
+		@media #{$sm-and-up}{
+			display:block;
+		}
+
+		@media #{$md-and-up}{
+			$left: 15%
+		}
+	}
+
+	
+
+	.container{
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    flex-direction: column;
+	}
+
+	.page-legal + &, .r-partners + & {
+	    padding-top: 160px;
+    	padding-bottom: 56px;
+    	background-image: none;
+	}
+}

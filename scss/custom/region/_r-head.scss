@@ -1,0 +1,77 @@
+// Region head
+
+.r-head {
+	margin-bottom: -80px;
+	@include background('bck-line-head.png', $position: center bottom, $cover:true); 
+	padding-top: 100px;
+
+	@media #{$sm-and-up} {
+		padding-top: 130px; 
+	}
+
+	@media #{$desktop} {
+		padding-top: 60px;	
+	}
+
+	&.inner-page {
+		
+	}
+
+	.container {
+		position: relative;
+	}
+
+	.b-logo-head {
+		
+		@media #{$portable} {
+			text-align: center;
+		}
+
+		@media #{$desktop} {
+			float: left;
+		}
+	}
+
+	.b-nav {
+		float: right;
+		margin-top: 15px;
+	}
+
+	.b-info-head {
+
+		@media #{$portable} {
+			@include margin(21px null 40px null);
+		}
+
+		@media #{$sm-and-up} {
+			margin-bottom:80px;
+		} 
+
+		@media #{$md-and-up}  {
+			@include margin(150px null);
+		}
+	}
+
+	&__ninot {
+		pointer-events: none;
+		@include position(absolute, 0 50px null null);
+
+		@media #{$portable} {
+			display: none;
+		}
+
+		@media #{$md-and-up}{
+		    right: -30px;
+		}
+		@media #{$lg-only}{
+		    right: 50px;
+		}
+	}
+
+	&.inner-page{
+		background-image: none;
+		background-color: $color-brand-blue;
+		margin-bottom: 0px;
+	    padding-bottom: 48px;
+	}
+}

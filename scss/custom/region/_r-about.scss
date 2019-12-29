@@ -1,0 +1,14 @@
+// Regio info about
+
+.r-about {	
+	background-color: $color-white;
+
+	@media #{$portable} {
+		margin-top: 200px;
+		@include padding(null 20px);
+	}
+
+	@media #{$desktop} {
+		margin-top: 300px;
+	}
+}

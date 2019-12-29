@@ -1,0 +1,79 @@
+// info que surrt al head
+
+.b-info-head {
+	clear: both;
+	display: block;
+	float: none;
+	width: 471px;
+
+	@media #{$portable} {
+		text-align: center;
+		width:100%;
+	}
+	
+	&__subtitle {
+		@include font-size(1.6);
+		color: $color-white;
+		font-weight: $f-medium;
+		letter-spacing: .5px;
+		@include background('star.png', 0 1px);
+
+		@media #{$portable} {
+			display: inline-block;
+			text-align: center;
+			padding-top: 25px;
+			background-position: center 0;
+		}
+
+		@media #{$desktop} {
+			padding-left: 30px;
+		}
+	}
+
+	&__title {
+		font-family: $f-gotham-bold;
+		color: $color-white;
+		letter-spacing: 1.02px;	
+		line-height: 93px;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+
+		@media #{$portable} {
+			@include font-size(5.9);
+			line-height: 1.1;
+		}
+
+		@media #{$desktop} {
+			@include font-size(9.7);
+			line-height: 93px;
+		}
+	}
+
+	.c-button {
+		@media #{$sm-and-up}{
+			display: inline-block;
+		}		
+
+		+ .c-button-line {
+
+			@media #{$portable} {
+				margin-top: 40px;
+			}
+
+			@media #{$sm-and-up}{
+				margin-left: 20px;
+			}		
+		}
+
+		&-play {
+			display: block;
+			clear: both;
+			float: none;
+			margin-top: 140px;
+
+			@media #{$md-and-up}{
+				margin-top: 80px;
+			}
+		}
+	}
+}

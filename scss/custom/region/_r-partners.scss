@@ -1,0 +1,28 @@
+
+.r-partners {
+	@include margin(80px null);
+
+	@media #{$desktop} {
+		width: 950px;
+		@include margin(null auto);
+	}
+
+	> .row {
+
+		@media #{$portable} {
+			@include margin(null 5px);
+		}
+
+		@media #{$desktop} {
+			@include margin(null (-$gut-list-partners));
+		}		
+	}
+
+	.b-partner {
+
+		@media #{$desktop} {
+			float: left;
+			width: 50%;
+		}		
+	}
+}

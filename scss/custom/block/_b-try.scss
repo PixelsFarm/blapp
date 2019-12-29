@@ -1,0 +1,35 @@
+// block amb botó per entrar al joc
+
+.b-try {
+	@media #{$sm-and-up}{
+		padding-left:52px;
+	}
+
+	@media #{$md-and-up}{
+		padding-left:92px;
+	}
+
+	h2 {
+		color:$color-brand-white;
+	    margin-bottom: 41px;
+        position: relative;
+        @include background-before('arrows.png', $w: 171px, $h: 187px, $top: -124px, $right: -144px, $z-index: null, $size: null) ;
+
+        @media #{$sm-and-up}{
+        	max-width: 70%;
+        }
+	}
+
+	p {
+		color:$color-brand-white;
+		@include font-size(1.8);
+		line-height: 28px;
+		letter-spacing: 0.49px;
+		font-family: 'gotham medium';
+		position: relative;
+		@media #{$sm-and-up}{
+			max-width: 80%;
+		}
+		//@include background-before('line.png', $w: 143px, $h: 2px, $bottom: -70px, $left: 2px, $z-index: null, $size: null) ;
+	}
+}

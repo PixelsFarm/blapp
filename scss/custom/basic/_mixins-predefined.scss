@@ -1,0 +1,331 @@
+// ==============================
+// Mixins predefinidos aplicables 
+// a cualquier proyecto
+// ==============================
+
+
+// -------------------------------
+// RESET, uso: @include reset(ul);
+// -------------------------------
+@mixin reset($type){
+    $resets: (
+        ul: (
+            list-style: none,
+            margin: 0,
+            padding: 0,
+            li: (
+                margin: 0,
+                padding: 0
+            )
+        ),
+        ol: (
+            list-style: none,
+            margin: 0,
+            padding: 0,
+            li: (
+                margin: 0,
+                padding: 0
+            )
+        ),
+        ul-row: (
+            list-style: none,
+            //margin: 0,
+            padding: 0,
+            li: (
+                margin: 0,
+                //padding: 0
+            )
+        ),
+        position: (
+            position: relative !important,
+            top: auto !important,
+            bottom: auto !important,
+            left: auto !important,
+            right: auto !important
+        )
+    );
+    
+    @each $prop, $value in map-get($resets, $type) {
+        @if type-of($value) == 'map' {
+            & > #{$prop} {
+                @each $sub-prop, $sub-value in $value {
+                    #{$sub-prop}: $sub-value;
+                }
+            }      
+        } @else {
+            #{$prop}: $value;
+        }
+    }
+}
+
+
+
+// -------
+// Center
+// -------
+
+// Center | Total 
+@mixin center-total($before: false, $after: false, $top: 50%, $left: 50%) {
+    @if $before == false and $after == false {
+        @include position(absolute, $top null null $left);
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+
+    @else if $before {
+        &::before {
+            @include position(absolute, $top null null $left);
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }
+    }
+
+    @else if $after {
+        &::after {
+            @include position(absolute, $top null null $left);
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }        
+    }   
+}
+
+// Center | Y
+@mixin center-y($before: false, $after: false, $top: 50%) {
+    @if $before == false and $after == false {
+        @include position(absolute, $top null null null);
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    @else if $before {
+        &:before {
+            @include position(absolute, $top null null null);
+            transform: translateY(-50%);
+            margin: 0;
+        }
+    }
+
+    @else if $after {
+        &:after {
+            @include position(absolute, $top null null null);
+            transform: translateY(-50%);
+            margin: 0;
+        }    
+    }   
+}
+
+// Center | X
+@mixin center-x($before: false, $left: 50%) {
+    @if $before == false {
+        position: absolute;
+        left: $left;
+        margin: 0;
+        transform: translateX(-50%);
+    }
+
+    @else {
+        &::before {
+            position: absolute;
+            left: $left;
+            margin: 0;
+            transform: translateX(-50%); 
+        }
+    }
+}
+
+
+// ----------
+// Background
+// ----------
+@mixin background($filename, $position:0 0, $repeat:no-repeat, $cover:false) {
+    $imagedir: '../assets/images/';
+ 
+    background: {
+        image: url(#{$imagedir}#{$filename});
+        position: $position;
+        repeat: $repeat;
+
+        @if $cover {
+            size: cover;
+        }
+    }
+}
+
+// Background | Before
+@mixin background-before($filename, $w: 100%, $h: 100%, $top: null, $right: null, $bottom: null, $left: null, $z-index: null, $size: null) {
+    $imagedir: '../assets/images/';
+
+    &::before {
+        content: '';
+        @include position(absolute, $top $right $bottom $left);
+        z-index: $z-index;
+        @include sizing($w, $h);
+        background-image: url(#{$imagedir}#{$filename});
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: $size;
+    }
+}
+
+
+
+// -----
+// Fonts
+// -----
+
+// Fonts | size
+@mixin font-size($sizeValue: null) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+// Fonts | ico
+@mixin font-ico($code, $size: 1.8, $color: $color-white, $family: $f-fontello, $position: absolute, $pseudo: 'before') {
+    position: relative;
+    
+    @if $pseudo == 'before' {
+
+        &::before {
+            @if $position == absolute { 
+                position: absolute;
+                z-index: $z-index-upper; 
+            }
+            @else if $position == fixed {
+                position: fixed;
+                z-index: $z-index-upper; 
+            }
+              
+            display: block;
+            content: $code;
+            font-family: $family;
+            speak: none;
+            @include font-size($size);
+            color: $color;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            text-indent: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+
+    @else if $pseudo == 'after' {
+    
+        &::after {
+            @if $position == absolute { 
+                position: absolute;
+                z-index: $z-index-upper; 
+            }
+            @else if $position == fixed {
+                position: fixed;
+                z-index: $z-index-upper; 
+            }
+              
+            display: block;
+            content: $code;
+            font-family: $family;
+            speak: none;
+            @include font-size($size);
+            color: $color;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            text-indent: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+}
+
+// Fonts | Ico | Center
+@mixin font-ico-center($height: 10px, $indent: 0) {
+    &::before { 
+        text-indent: $indent;
+        line-height: $height;
+        text-align: center;
+    }
+}
+
+// Fonts | Ico | Position
+@mixin font-ico-pos($top: null, $right: null, $bottom: null, $left: null) {
+    &::before { 
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+
+    }
+}
+
+
+// ----
+// Other
+// ----
+
+// Bootstrap | Container
+@mixin container {
+    @include margin(null auto);
+    @include padding(null 15px);
+
+    &:before, &:after {
+        content: " ";
+        display: table; 
+    }
+
+    &:after {
+        clear: both; 
+    }
+
+    @media #{$portable} {
+        width: 100%; 
+    }
+
+    @media #{$desktop}  {
+        width: $bootstrap-container-width-desktop; 
+    } 
+}
+
+// Table | Cell
+@mixin cell ($align: null) {
+    display: table-cell;
+    vertical-align: middle;
+
+    @if $align {
+        text-align: $align;
+    }
+}
+
+// IMG | transforma imatge a 100% width o 100% height amb auto per a l'altre propietat
+@mixin full-size ($tipus: 'width', $reset-max: null) {
+    @if $tipus == 'width' {
+        width: 100%;
+        height: auto;
+    }
+    @else if $tipus == 'height' {
+        width: auto;
+        height: 100%;
+    }
+
+    @if $reset-max == true { max-width: none; }  
+}
+
+// IMG | Reseteja propietats img-responsive heredades de bootstrap
+@mixin reset-size($tipus: 'width') {
+    @if $tipus == 'width' {
+        width: auto;
+        max-width: none;
+    }
+    @else if $tipus == 'height' {
+        height: auto;
+        max-height: none;
+    }
+}
+
+
+
+
+
+
+
+

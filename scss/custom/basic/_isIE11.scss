@@ -1,0 +1,23 @@
+.isIE11 {
+	position: relative;
+
+	.qc-cmp-showing {
+		@include center-total;
+		top: 50% !important;
+		left: 50% !important;
+		height: 690px;
+	}
+
+	.qc-cmp-publisher-logo {
+		width: 70%;
+		height: auto;
+	}
+
+	.b-partner__logo {
+		position: relative;
+
+		img {
+			@include center-total;
+		}
+	}
+}

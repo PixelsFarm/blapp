@@ -1,0 +1,55 @@
+// -------------------------------
+// Clases sueltas o de última hora 
+// que no sabemos dónde ponerlas
+// ===============================
+
+.qc-cmp-showing {
+
+	@media #{$portable} {
+		max-width: none;
+		height: 100vh;
+	}
+}
+
+.qc-cmp-ui-container {
+	height: 100vh;
+}
+
+.qc-cmp-ui {
+
+	@media #{$portable} {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.qc-cmp-publisher-logo {
+
+	@media #{$portable} {
+		max-height: none !important;
+		margin: 0 !important;  	
+	}
+}
+
+.qc-cmp-ui-content {
+
+	@media #{$portable} {
+		display: block !important;
+		margin: 0 !important;
+	}
+}
+
+.qc-cmp-buttons.qc-cmp-primary-buttons {
+
+	@media #{$portable} {
+		padding-top: 80px;
+	}
+}
+
+.qc-cmp-alt-buttons {
+
+	@media #{$portable} {
+		padding-top: 70px;
+	}
+}
+

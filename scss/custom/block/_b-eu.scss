@@ -1,0 +1,31 @@
+// logo eu footer
+
+.b-eu {
+	text-align: center;
+
+	@media #{$sm-and-up}{
+		text-align: left;
+	}
+
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	p {
+		display: inline-block;
+		vertical-align: middle;
+		@include font-size(1.0);
+		color: $color-text;
+		line-height: 14px;
+		@include margin(13px null null 15px);
+
+		@media #{$tablet} {
+			max-width: 230px;
+		}
+
+		@media #{$desktop} {
+		    max-width: 310px;
+		}
+	}
+}

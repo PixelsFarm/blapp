@@ -1,0 +1,86 @@
+// CAratula del header
+
+.b-caratula {
+	position: relative;
+	@include sizing(100%, 420px);
+	border-radius: 11px;
+	box-shadow: 0 40px 60px -39px rgba(55,0,125,.5);
+	background: linear-gradient(180deg, #FFFFFF 0%, #DDDEF5 100%);
+
+	@media #{$portable} {
+		width: calc(100% - 20px);
+		@include margin(null auto);
+	}
+
+	@media #{$sm-and-up}{
+		height: 728px;
+	}
+
+	&__tablet {
+		@include center-total($top: 52%);
+
+		@media #{$portable} {
+			width: 94%;
+		}
+	}
+
+	&__friend {
+		position: absolute;
+
+		&--red {
+			top: -20px;
+    		right: -10px;
+    		width: 100px;
+    		height: auto;
+
+			@media #{$md-and-up}{
+				top: 174px;
+	    		right: -30px;
+	    	} 
+	    	@media #{$lg-only }{
+				top: 174px;
+	    		right: -100px;
+	    		width:auto;
+	    	} 		
+		}
+
+		&--blue {
+			bottom: -60px;
+			left: -48px;
+			
+			@media #{$portable} {
+				left: 0;
+				width: 130px;
+				height: auto;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	&__circles {
+		@include position(absolute, 150px null null -90px);
+
+		.circle {
+			@include sizing(16px);
+			border-radius: 100%;
+
+			$arr: ('lima', $color-brand-lima), ('red', $color-brand-red), ('blue', #4992FF);
+			@each $tipus in $arr {
+				$name : nth($tipus, 1);
+				$color: nth($tipus, 2);
+			    
+			    &--#{$name} {
+			        background-color: $color;
+			    }
+			}
+
+			+ .circle {
+				margin-top: 70px;
+			}
+		}
+	}
+}

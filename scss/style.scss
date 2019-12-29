@@ -1,0 +1,67 @@
+// ======
+// Vendor
+// ------
+
+//bootstrap
+@import 'vendor/_bootstrap-default-variables'; // bootstrap default variables: es posa abans del framework bootstrap per sobreescriure variables
+@import 'vendor/_bootstrap'; // bootstrap framework import
+
+// Bourboun
+@import 'vendor/_bourbon'; // bourboun libraries
+
+// ======
+// Custom
+// ------
+
+// Base
+@import 'custom/basic/_variables-colors';
+@import 'custom/basic/_variables-general';
+@import 'custom/basic/_breakpoints';
+@import 'custom/basic/_typography';
+@import 'custom/basic/_mixins-predefined';
+@import 'custom/basic/_mixins-project';
+@import 'custom/basic/_extend';
+@import 'custom/basic/_basic';
+@import 'custom/basic/_shame';
+@import 'custom/basic/_isIE11';
+
+// Region
+@import 'custom/region/_r-head';
+@import 'custom/region/_r-friends';
+@import 'custom/region/_r-about';
+@import 'custom/region/_r-try';
+@import 'custom/region/_r-subfooter';
+@import 'custom/region/_r-footer';
+@import 'custom/region/_r-team';
+@import 'custom/region/_r-firms';
+@import 'custom/region/_r-partners';
+
+// Page
+@import 'custom/page/_p-page';
+@import 'custom/page/_p-legal';
+
+// Block
+@import 'custom/block/_b-about';
+@import 'custom/block/_b-caratula';
+@import 'custom/block/_b-carousel';
+@import 'custom/block/_b-copy';
+@import 'custom/block/_b-eu';
+@import 'custom/block/_b-info-head';
+@import 'custom/block/_b-logo-head';
+@import 'custom/block/_b-nav-footer';
+@import 'custom/block/_b-nav';
+@import 'custom/block/_b-navbar';
+@import 'custom/block/_b-share';
+@import 'custom/block/_b-tel';
+@import 'custom/block/_b-try';
+@import 'custom/block/_b-partner';
+@import 'custom/block/_b-people';
+
+// Component
+@import 'custom/component/_c-button-line';
+@import 'custom/component/_c-button-play';
+@import 'custom/component/_c-button-try';
+@import 'custom/component/_c-button-carousel';
+@import 'custom/component/_c-dots';
+
+

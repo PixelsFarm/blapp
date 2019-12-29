@@ -1,0 +1,27 @@
+// Regio que conté carousel
+
+$color-bck: #F4F5FF;
+
+.r-friends {
+	padding-top: 40px;
+	background-color: $color-brand-white;
+	@media #{$sm-and-up}{
+		padding-top: 60px;
+	}
+
+	&__title {
+		font-family: $f-gotham-bold;
+		@include font-size(4.0);
+		color: $color-brand-blue;
+		text-align: center;
+		letter-spacing: .5px;
+
+		@media #{$portable} {
+			margin-bottom: 40px;
+		}
+
+		@media #{$desktop} {
+			margin-bottom: 90px;
+		}
+	}
+}

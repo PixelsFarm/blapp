@@ -1,0 +1,66 @@
+// Regio amb botó per entrar a jugar
+
+.r-try {
+	background-color: $color-brand-red;
+	@include padding(115px null 63px null);
+    @include background('background-content.png', $position:center -70px);
+    overflow-x: hidden;
+
+    @media #{$sm-and-up}{
+    	padding-bottom:153px;
+    	overflow-x: initial;
+    }
+
+    @media #{$md-and-up}{
+	    background-position: top -80px;
+    }
+
+    @media #{$lg-only}{
+	    background-position: top center;
+    }
+
+    .container-fluid{
+    	@media #{$sm-and-up}{
+		    display: flex;
+	     	align-items: center; 
+	    }
+    }
+
+	.image-try,
+	.b-try{
+		@media #{$sm-and-up}{
+			float: left;
+		}
+	}
+	.b-try{
+		@media #{$sm-and-up}{
+			width: 60%;
+		}
+
+		@media #{$md-and-up}{
+			width: 50%;
+		}
+	}
+
+	.image-try{
+		max-width:722px;
+		margin-left:-15px;
+
+		@media #{$sm-and-up}{
+			width: 40%;
+		}
+
+		@media #{$md-and-up}{
+			width: 50%;
+		}
+		
+		img{
+			width: 100%;
+			height: auto;	
+		}
+	}
+
+	.title{
+		margin-top: 80px;
+	}
+}

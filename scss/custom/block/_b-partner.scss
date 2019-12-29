@@ -1,0 +1,86 @@
+// block partner
+
+.b-partner {
+	margin-bottom: 35px;
+	@include padding(null $gut-list-partners);
+	transition: opacity .4s;
+
+	@media #{$desktop} {
+		opacity: 0;
+		min-height: 429px;
+	}	
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100px;
+	}
+
+	> a {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		@include sizing(100%);
+		text-align: center;
+		text-decoration: none;
+		@include padding(38px null 25px null);
+		border-radius: 25px;
+		box-shadow: 0px 0px 23px 0px rgba(0,0,0,.3); 
+		background-color: $color-white;
+		transition: all .25s;
+
+		@media #{$portable} {
+			@include padding(null 30px);
+		}	
+
+		@media #{$desktop} {
+			@include padding(null 65px);
+		}
+
+		&:hover {
+			box-shadow: 0px 0px 23px 0px rgba(0,0,0,.1); 
+		}
+	}
+
+	.c-list {
+		@include reset(ul-row);
+		@include padding (35px null);
+
+		&__item {
+			position: relative;
+			font-family: $f-gotham-book;
+			@include font-size(1.6);
+			color: $color-brand-blue;
+			font-weight: $f-normal;
+			line-height: 34px;
+			text-align: left;
+			padding-left: 15px;
+
+			&::before {
+				content: '';
+				@include position(absolute, 14px null null 0);
+				width: 6px;
+				height: 6px;
+				border-radius: 100%;
+				background-color: #E2EF47;
+			}
+		}
+	}
+
+	img {
+		@include margin(null auto);
+	}
+
+	&__url {
+		@include position(absolute, null null 0 0);
+		width: 100%;
+		font-family: $f-gotham-book;
+		@include font-size(1.6);
+		color: $color-white;
+		text-align: center;
+		letter-spacing: .44px;
+		@include padding(10px null);
+		background-color: $color-brand-blue;
+	}
+}

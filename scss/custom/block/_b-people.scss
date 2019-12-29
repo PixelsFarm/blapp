@@ -1,0 +1,65 @@
+
+.people{
+	@include reset(ul-row);
+	@include margin(28px null 0 null);
+
+	@media #{$portable} {
+		width: 100%;
+	}
+
+	@media #{$tablet} {
+		width: 530px;
+		@include margin(null auto);
+	}
+
+	@media #{$desktop}{
+		width: 945px;
+		@include margin(48px auto null auto);
+	}
+
+	.person {
+		width: 100%;
+		@include padding(20px);
+		color:$color-brand-blue;
+
+		@media #{$portable} {
+			text-align: center;
+		}
+
+		@media #{$tablet} {
+			float: left;
+			width: 50%;
+			text-align: left;
+		}
+
+		@media #{$desktop}{
+			float: left;
+			width: 25%;
+			@include padding(0 20px 0px 20px);
+		}
+
+		.name {
+			@include font-size(1.6);
+			letter-spacing: 0.44px;
+			line-height: 26px;
+		    margin-top: 28px;
+	        font-family:$f-gotham-bold;
+
+	        @media #{$tablet} {
+			    padding-left: 30px;
+	        }
+		}
+
+		.position {
+			@include font-size(1.4);
+			letter-spacing: 0.41px;
+			line-height: 17px;
+			font-family: $f-gotham-medium;
+		    margin-top: 6px;
+
+		    @media #{$tablet} {
+			    padding-left: 30px;
+	        }
+		}
+	}
+}

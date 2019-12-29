@@ -1,0 +1,26 @@
+// Regio del footer
+
+.r-footer {
+	@include padding(35px null);
+	background-color: #F3F3F3;
+
+	.container {
+		@media #{$sm-and-up}{
+	    	display: flex;
+	    	align-items: center;
+	    }
+	}
+
+	.left,
+	.right {
+		width: 100%;
+
+		@media #{$sm-and-up}{
+			width: 50%;
+		}
+	}
+
+	.right {
+		@include margin(10px null null auto);
+	}
+}

@@ -1,0 +1,22 @@
+// telèfom
+
+.b-tel {
+	@include font-size(1.2);
+	letter-spacing: 0.38px;
+	font-family: 'gotham medium';
+    line-height: 1em;
+    margin-bottom: 18px;
+
+    a{
+    	color:$color-brand-white;
+
+    	&:hover{
+			color:$color-brand-lima;
+			text-decoration: none;
+		}
+
+		&:first-child{
+			margin-right: 11px;
+		}
+    }
+}

@@ -1,0 +1,59 @@
+// Todo lo relacionado con las tipos
+
+// fonts import
+	
+	// poppins
+	@import url('https://fonts.googleapis.com/css?family=Poppins:300&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Poppins:400&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Poppins:600&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Poppins:700&display=swap');
+
+	// gotham medium
+	@include font-face(
+		"gotham medium",
+	  	"../assets/fonts/Gotham-Medium", 
+	  	("eot", "ttf", "woff", "svg")
+	) {
+	  font-style: normal;
+	  font-weight: 500;
+	}
+
+	// gotham bold
+	@include font-face(
+		"gotham bold",
+	  	"../assets/fonts/Gotham-Bold", 
+	  	("eot", "ttf", "woff", "svg")
+	) {
+	  font-style: normal;
+	  font-weight: 700;
+	}
+
+	// gotham bold
+	@include font-face(
+		"gotham book",
+	  	"../assets/fonts/Gotham-Book", 
+	  	("eot", "ttf", "woff", "svg")
+	) {
+	  font-style: normal;
+	}
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+
+// fonts family
+$f-nombre       : 'Nombre fuente', sans-serif;
+$f-poppins      : 'Poppins', sans-serif;
+$f-gotham-medium: 'gotham medium', sans-serif;
+$f-gotham-bold  : 'gotham bold', sans-serif;
+$f-gotham-book  : 'gotham book', sans-serif;
+
+// font weight 
+$f-bold      : 700;
+$f-semibold  : 600;
+$f-medium    : 500;
+$f-normal    : 400;
+$f-light     : 300;
+
+// codes ico
+$ico-nombre: '\eXXX';

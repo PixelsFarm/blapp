@@ -1,0 +1,35 @@
+// dots carousel
+
+.c-dots {
+	//display: none;
+	@include reset(ul);
+	@include center-x;
+	bottom: 0;
+
+	&__dot {
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: middle;
+		@include sizing(20px);
+		border-radius: 100%;
+		transition: all .25s;
+
+		+ .c-dots__dot {
+			margin-left: 5px;
+		}
+
+		$arr: ($color-brand-lima, 1), ($color-brand-red, 2), ($color-brand-blue, 3), ($color-black, 4);
+		@each $tipus in $arr {
+			$color: nth($tipus, 1);
+			$pos  : nth($tipus, 2);
+		    
+		    &:nth-child(#{$pos}) {
+		        background-color: $color;
+		    }
+		}
+
+		&.active {
+			@include sizing(25px);
+		}
+	}
+}

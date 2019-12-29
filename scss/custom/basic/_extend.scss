@@ -1,0 +1,25 @@
+// =======================================
+// Clases amb Propietats 
+// que es repeteixen en diferents elements
+// =======================================
+
+%bootstrap-row {
+	margin-left: -$bootstrap-pad;
+	margin-right: -$bootstrap-pad;
+}
+
+
+
+%h2{
+	@include font-size(4.0);
+	letter-spacing: 0.5px;
+	line-height: 42px;
+	font-family: 'gotham bold';
+	color:$color-brand-blue;
+	font-weight: $f-bold;
+}
+
+
+
+
+

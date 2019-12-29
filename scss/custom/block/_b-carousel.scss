@@ -1,0 +1,122 @@
+// Carousel
+
+$color-subtitle: #9FA6FC;
+
+.b-carousel {
+	position: relative;
+	height: 600px;
+	width: calc(100%+30px);
+	overflow: hidden;  
+	@include margin(0 -15px); 
+
+	@media #{$portable} {
+		height: 550px;
+	}
+
+	.c-button-play {
+		position: absolute;
+		z-index: 99;
+
+		@media #{$portable} {
+			top: 250px;
+		    transform: scale(.5);
+		}
+
+		@media #{$desktop} {
+			top: 250px;
+		}
+
+		&--next {
+			right: 27px;
+
+			@media #{$sm-and-up}{
+			    right: 47px;
+			}
+
+			@media #{$md-and-up}{
+			    right: 117px;
+			}
+		}
+
+		&--prev {
+			transform: scaleX(-.5) scaleY(.5);
+			left: 27px;
+
+			@media #{$sm-and-up}{
+				left: 47px;
+			}
+
+			@media #{$md-and-up}{
+				left: 114px;
+				transform: scaleX(-1);
+			}
+		}
+	}
+
+	.c-list {
+		@include reset(ul-row);
+		height: 100%;
+
+		&__item {
+			pointer-events: none;
+			position: relative;
+			float: left;
+			@include sizing(255px,463px);
+			padding: 10px 20px 15px 20px;
+			border-radius: 29px;
+			box-shadow: 0 40px 60px -39px rgba(55,0,125,0.5);
+			background: linear-gradient(180deg, #FFFFFF 0%, #DDDEF5 100%);
+
+			@media #{$sm-and-up}{
+				@include sizing(355px,513px);
+				padding: 25px 45px 15px 45px;
+			}
+
+			&::before {
+				content: '';
+				@include position(absolute, null null 0 0);
+				@include sizing(100%);
+				border-radius: 29px;
+				box-shadow: inset 0 -5px 1px rgba(37, 37, 37, .1);
+			}
+		}
+
+		&__pers {
+			padding-left: 25px;
+
+			img {
+				width: 80%;
+				height: auto;
+			}
+		}
+
+		&__title {
+			font-family: $f-gotham-bold;
+			@include font-size(4.0);
+			color: $color-brand-blue;
+			text-align: center;
+			line-height: .9;
+			letter-spacing: .5px;
+			margin-bottom: 15px;
+		}
+
+		&__subtitle {
+			font-family: $f-poppins;
+			@include font-size(1.6);
+			color: $color-subtitle;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: .5px;
+			margin-bottom: 25px;
+		}
+
+		&__description {
+			font-family: $f-poppins;
+			@include font-size(1.4);
+			color: $color-brand-blue;
+			text-align: center;
+			letter-spacing: .44px;
+			line-height: 20px;
+		}
+	}
+}

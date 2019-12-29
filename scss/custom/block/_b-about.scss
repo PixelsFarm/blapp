@@ -1,0 +1,88 @@
+
+
+.b-about {
+	float: left;
+	padding-bottom: 40px;
+
+	@media #{$sm-and-up}{
+		padding-right:40%;
+		padding-bottom: 112px;
+		@include background('background-about.png', $position: right 120px);
+		background-size: 40%;
+	}
+
+	@media #{$md-and-up}{
+		padding-right:50%;
+		background-position: right 39px;
+		background-size: auto;
+	}
+
+	.title {
+		color:$color-brand-red;
+
+		&:before {
+			background-color:$color-brand-red;
+		}
+	}
+
+	h2 {
+	    margin-bottom: 41px;
+	}
+
+	p{
+		color:$color-brand-blue;
+		@include font-size(1.8);
+		line-height: 28px;
+		letter-spacing: 0.49px;
+		font-family: 'gotham medium';
+	}
+	
+	.two-col{
+	    margin-top: 34px;
+	    color:$color-brand-blue;
+	    float: left;
+	    position: relative;
+	    //@include background-before('line2.png', $w: 143px, $h: 2px, $bottom: -37px, $left: 2px, $z-index: null, $size: null) ;
+
+		.right,
+		.left{
+			float: left;
+			@include padding(null 22px null 54px);
+
+			@media #{$sm-and-up}{
+				width: 100%;
+			}
+
+			@media #{$md-and-up}{
+				width: 50%;
+			}
+
+			.destacat{
+				@include font-size(1.6);
+				line-height: 26px;
+				letter-spacing: 0.44px;
+				font-family: 'gotham medium';
+				position: relative;
+			}
+
+			p{
+				@include font-size(1.4);
+				line-height: 24px;
+				letter-spacing: 0.41px;
+				font-family: 'gotham medium';
+			}
+		}
+
+		.right{
+			.destacat{
+				@include background-before('mail.png', $w: 37px, $h: 35px, $top: -1px, $left: -51px, $z-index: null, $size: null) ;
+			}
+		}
+
+		.left{
+			.destacat{
+				@include background-before('talk.png', $w: 47px, $h: 36px, $top: -2px, $left: -48px, $z-index: null, $size: null) ;
+			}
+		}
+	}
+}

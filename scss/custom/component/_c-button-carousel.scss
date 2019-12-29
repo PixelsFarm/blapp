@@ -1,0 +1,15 @@
+// botons next i prev carousel
+
+.c-button-carousel {
+	cursor: pointer;
+	@include sizing(149px,135px);
+	@include background('bt-next-carousel.png');
+
+	&:hover {
+		@include background('bt-next-carousel--hover.png');
+	}
+
+	&--prev {
+		@include scaleX(-1);
+	}
+}

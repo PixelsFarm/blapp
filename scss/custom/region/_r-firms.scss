@@ -1,0 +1,60 @@
+.r-firms {
+	padding-top: 70px;
+	background-color: $color-brand-white;
+
+	@media #{$portable} {
+    	overflow-x: hidden;
+		width: 100vw;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	.firms {
+		position: relative;
+		width: fit-content;
+		@include margin(null auto);
+		@include padding(28px 55px);
+
+    	@media #{$tablet} {
+			min-height: 190px;	
+    	}
+
+    	&:hover::before {
+    		opacity: 1;
+    		//@include background('trapeci.jpg', center center);
+    	}
+
+    	&::before {
+    		pointer-events: none;
+    		opacity: 0;
+    		content: '';
+    		@include center-total;
+    		@include sizing(805px,175px);
+    		box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+    		transform: skew(-15deg, 0) translate(-50%, -50%);
+    		transform-origin: center center;
+    		transition: opacity .25s;
+    	}
+
+    	> a {
+    		display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
+
+	    	@media #{$sm-and-up}{
+		    	flex-direction: row;
+		    }
+    	}
+
+	    .firm {
+	    	margin: 0 16px 32px 16px;
+
+	    	@media #{$sm-and-up}{
+	    		margin: 0 16px;
+	    	}
+	    }
+	}
+}

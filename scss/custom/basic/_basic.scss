@@ -1,0 +1,49 @@
+// =======
+// general
+// -------
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	height: 100vh;
+	font-family: $f-gotham-medium;
+	@include font-size(1.6);
+	color: $color-text;
+	line-height: 21px;
+	margin-top: 0;
+	background-color: $color-white;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+	padding: 0;
+}
+
+	
+
+h2{
+	@extend %h2;
+}
+
+.title{
+	font-family: $f-gotham-medium;
+	@include font-size(1.4);
+	text-transform: uppercase;
+	color: $color-white;
+	letter-spacing: 0.41px;
+	line-height: 24px;
+    padding-left: 86px;
+    position: relative;
+    margin-bottom: 24px;
+
+    &:before{
+    	display: block;
+    	content:"";
+    	background-color: $color-white;
+    	height:2px;
+    	width: 70px;
+    	@include position(absolute, 13px null null 0);
+    }
+}

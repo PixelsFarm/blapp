@@ -1,0 +1,35 @@
+// nav del footer
+
+.b-nav-footer {
+
+	.c-list{
+		@include reset(ul);
+		display: flex;
+	    justify-content: flex-end;
+        margin-bottom: 7px;
+
+		.c-list__item{
+
+			border-right:1px solid $color-brand-white;
+			@include padding(null 17px);
+			@include font-size(1.2);
+			letter-spacing: 0.38px;
+			font-family: 'gotham medium';
+		    line-height: 1em;
+		    text-transform: uppercase;
+
+			&:last-child{
+				border-right:0;
+			}
+		    
+			a{
+				color:$color-brand-white;
+				
+				&:hover{
+					color:$color-brand-lima;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
